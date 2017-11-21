@@ -11,20 +11,30 @@ MainPage::MainPage(QWidget *parent) :
 
 
 
-    //only for windows
-    #if defined(Q_OS_WIN)
-    setWindowFlags(Qt::Widget | Qt::MSWindowsFixedSizeDialogHint);
-    #endif
 
+
+
+    //To prevent resizing the window
+    #if defined(Q_OS_WIN)//only for windows
+    setWindowFlags(Qt::Widget | Qt::MSWindowsFixedSizeDialogHint);
+    #else//for all the other platforms
+    this->setMaximumSize(this->size());
+    #endif
 
 
     //setting up the background
     QPixmap bkgnd(":images/clouds.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    //bkgnd.sca
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
+
+
+    //set the text colour to white
+    ui->labelMainPageInfoTop->setStyleSheet("QLabel {color : white; }");
+    ui->labelMainPageInfoTop_2->setStyleSheet("QLabel {color : white; }");
+    ui->labelMainPagePlayer1->setStyleSheet("QLabel {color : white; }");
+    ui->labelMainPagePlayer2->setStyleSheet("QLabel {color : white; }");
 
 
     //setting up the intro logo gif
@@ -33,8 +43,6 @@ MainPage::MainPage(QWidget *parent) :
     movie->setScaledSize(ui->labelMainPageLogo->size());
     ui->labelMainPageLogo->setMovie(movie);
     movie->start();
-
-
 
 
 }
