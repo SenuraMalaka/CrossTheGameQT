@@ -9,11 +9,32 @@ MainPage::MainPage(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+
+    //only for windows
+    #if defined(Q_OS_WIN)
+    setWindowFlags(Qt::Widget | Qt::MSWindowsFixedSizeDialogHint);
+    #endif
+
+
+
+    //setting up the background
+    QPixmap bkgnd(":images/clouds.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    //bkgnd.sca
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
+
+    //setting up the intro logo gif
     QMovie *movie = new QMovie(":images/gif/introLogo.gif");
 
     movie->setScaledSize(ui->labelMainPageLogo->size());
     ui->labelMainPageLogo->setMovie(movie);
     movie->start();
+
+
 
 
 }

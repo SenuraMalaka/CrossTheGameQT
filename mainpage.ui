@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>570</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QLabel" name="labelMainPageLogo">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
-     <width>251</width>
-     <height>151</height>
+     <x>20</x>
+     <y>180</y>
+     <width>311</width>
+     <height>251</height>
     </rect>
    </property>
    <property name="autoFillBackground">
