@@ -10,11 +10,7 @@ MainPage::MainPage(QWidget *parent) :
     ui->setupUi(this);
 
     QMovie *movie = new QMovie(":images/gif/introLogo.gif");
-//    QSize *size;
-//   size->setHeight(200);
-//   size->setWidth(200);
 
-    //ui->labelMainPageLogo = new QLabel(this);
     movie->setScaledSize(ui->labelMainPageLogo->size());
     ui->labelMainPageLogo->setMovie(movie);
     movie->start();
