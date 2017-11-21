@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>310</y>
+     <y>290</y>
      <width>281</width>
      <height>41</height>
     </rect>
@@ -48,7 +48,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>440</y>
+     <y>400</y>
      <width>281</width>
      <height>41</height>
     </rect>
@@ -104,7 +104,7 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>270</y>
+     <y>250</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -124,7 +124,7 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>400</y>
+     <y>360</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -140,7 +140,28 @@
     <string>Player 2</string>
    </property>
   </widget>
+  <widget class="QLabel" name="labelMainPageArrowBtn">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>470</y>
+     <width>91</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/images/btns/arrow.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

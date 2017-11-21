@@ -2,16 +2,13 @@
 #include "ui_mainpage.h"
 #include "QMovie"
 #include "QSize"
+#include <QDebug>
 
 MainPage::MainPage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainPage)
 {
     ui->setupUi(this);
-
-
-
-
 
 
     //To prevent resizing the window
@@ -50,4 +47,15 @@ MainPage::MainPage(QWidget *parent) :
 MainPage::~MainPage()
 {
     delete ui;
+}
+
+void MainPage::checkPlayerNames(){
+
+    QString player1=ui->lineEditMainPagePlayer1->text();
+    QString player2=ui->lineEditMainPagePlayer2->text();
+
+    if(player1 == "" || player2 == "")
+        qDebug()<<"Player name could not be blank";
+
+
 }

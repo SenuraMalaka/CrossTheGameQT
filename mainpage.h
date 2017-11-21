@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::MainPage *ui;
+    void checkPlayerNames();
 };
 
 #endif // MAINPAGE_H
