@@ -20,10 +20,35 @@ public slots:
     void setPlayer1(QString p);
     void setPlayer2(QString p);
 
+signals:
+    void playerChanceChanged(bool);
+
+private slots:
+    void on_pushButton1X1_clicked();
+    void toggleRedArrow(bool isPlayer1);
+
+    void on_pushButton1X2_clicked();
+
+    void on_pushButton1X3_clicked();
+
+    void on_pushButton2X1_clicked();
+
+    void on_pushButton2X2_clicked();
+
+    void on_pushButton2X3_clicked();
+
+    void on_pushButton3X1_clicked();
+
+    void on_pushButton3X2_clicked();
+
+    void on_pushButton3X3_clicked();
+
 private:
     Ui::PlayPage *ui;
     QString player1Name;
     QString player2Name;
+    bool isPlayer1Chance;
+    void togglePlayerChance();
 };
 
 #endif // PLAYPAGE_H
