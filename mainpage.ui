@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Cross the Game - Fill Names</string>
   </property>
   <widget class="QLabel" name="labelMainPageLogo">
    <property name="geometry">
@@ -140,23 +140,41 @@
     <string>Player 2</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelMainPageArrowBtn">
+  <widget class="QPushButton" name="pushButtonPlayNow">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>460</x>
      <y>470</y>
-     <width>91</width>
+     <width>281</width>
      <height>91</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string/>
+    <string>PLAY NOW</string>
    </property>
-   <property name="pixmap">
-    <pixmap resource="images.qrc">:/images/btns/arrow.png</pixmap>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/btns/arrow.png</normaloff>:/images/btns/arrow.png</iconset>
    </property>
-   <property name="scaledContents">
-    <bool>true</bool>
+   <property name="iconSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

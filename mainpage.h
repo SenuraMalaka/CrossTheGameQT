@@ -15,9 +15,13 @@ public:
     explicit MainPage(QWidget *parent = 0);
     ~MainPage();
 
+private slots:
+    void on_pushButtonPlayNow_clicked();
+
 private:
     Ui::MainPage *ui;
     void checkPlayerNames();
+    MainPage *tc;
 };
 
 #endif // MAINPAGE_H
