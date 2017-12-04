@@ -14,7 +14,6 @@ MainPage::MainPage(QWidget *parent) :
 
     //QObject::connect(ui->labelMainPageArrowBtn, SIGNAL(), this, SLOT(checkPlayerNames()));
 
-
     //To prevent resizing the window
     #if defined(Q_OS_WIN)//only for windows
     setWindowFlags(Qt::Widget | Qt::MSWindowsFixedSizeDialogHint);
@@ -53,8 +52,9 @@ MainPage::~MainPage()
     delete ui;
 }
 
-void MainPage::checkPlayerNames(){
+bool MainPage::checkPlayerNames(){
 
+    bool ret=false;
     qDebug()<<"this ran";
 
     QString player1=ui->lineEditMainPagePlayer1->text();
@@ -64,11 +64,22 @@ void MainPage::checkPlayerNames(){
         qDebug()<<"Player name could not be blank";
     else if (player1 == player2)
         qDebug()<<"Player names should not be the same";
+    else ret=true;
 
 
+    return ret;
 }
 
 void MainPage::on_pushButtonPlayNow_clicked()
 {
-    checkPlayerNames();
+    bool py=false;
+    py=checkPlayerNames();
+    if(py){
+        qDebug()<<"Now the player can play";
+
+     pPage.show();
+     this->destroy();
+    }
+
+
 }

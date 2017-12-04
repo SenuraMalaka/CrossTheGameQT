@@ -2,6 +2,7 @@
 #define MAINPAGE_H
 
 #include <QWidget>
+#include "playpage.h"
 
 namespace Ui {
 class MainPage;
@@ -20,8 +21,9 @@ private slots:
 
 private:
     Ui::MainPage *ui;
-    void checkPlayerNames();
+    bool checkPlayerNames();
     MainPage *tc;
+    PlayPage pPage;
 };
 
 #endif // MAINPAGE_H

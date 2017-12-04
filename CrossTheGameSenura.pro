@@ -13,13 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    mainpage.cpp
+    mainpage.cpp \
+    playpage.cpp
 
 HEADERS  += \
-    mainpage.h
+    mainpage.h \
+    playpage.h
 
 FORMS    += \
-    mainpage.ui
+    mainpage.ui \
+    playpage.ui
 
 RESOURCES += \
     images.qrc
