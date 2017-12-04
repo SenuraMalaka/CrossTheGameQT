@@ -78,7 +78,8 @@ void MainPage::on_pushButtonPlayNow_clicked()
         qDebug()<<"Now the player can play";
 
      pPage.show();
-     this->destroy();
+     this->close();
+
     }
 
 

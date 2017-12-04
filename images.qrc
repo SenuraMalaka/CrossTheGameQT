@@ -3,5 +3,8 @@
         <file>images/gif/introLogo.gif</file>
         <file>images/clouds.jpg</file>
         <file>images/btns/arrow.png</file>
+        <file>images/btns/cross/leave_btn.png</file>
+        <file>images/btns/cross/tomato_btn.png</file>
+        <file>images/btns/cross/btn_empty.png</file>
     </qresource>
 </RCC>
