@@ -1,5 +1,6 @@
 #include "playpage.h"
 #include "ui_playpage.h"
+#include <QDebug>
 
 PlayPage::PlayPage(QWidget *parent) :
     QWidget(parent),
@@ -16,11 +17,21 @@ PlayPage::PlayPage(QWidget *parent) :
     this->setPalette(palette);
 
 
-
-
 }
 
 PlayPage::~PlayPage()
 {
     delete ui;
+}
+
+void PlayPage::setPlayer1(QString p){
+
+    ui->labelPlayer1->setText(p.toLatin1());
+
+}
+
+void PlayPage::setPlayer2(QString p){
+
+    ui->labelPlayer2->setText(p.toLatin1());
+
 }

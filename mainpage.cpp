@@ -10,9 +10,12 @@ MainPage::MainPage(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //tc = new MainPage(this);
+    pPage = new PlayPage();
 
-    //QObject::connect(ui->labelMainPageArrowBtn, SIGNAL(), this, SLOT(checkPlayerNames()));
+    //change the player names in the next form according to the typed ones
+    QObject::connect(this->ui->lineEditMainPagePlayer1, SIGNAL(textChanged(QString)),pPage, SLOT(setPlayer1(QString)));
+    QObject::connect(this->ui->lineEditMainPagePlayer2, SIGNAL(textChanged(QString)),pPage, SLOT(setPlayer2(QString)));
+
 
     //To prevent resizing the window
     #if defined(Q_OS_WIN)//only for windows
@@ -77,7 +80,7 @@ void MainPage::on_pushButtonPlayNow_clicked()
     if(py){
         qDebug()<<"Now the player can play";
 
-     pPage.show();
+     pPage->show();
      this->close();
 
     }

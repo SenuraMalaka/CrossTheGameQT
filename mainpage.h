@@ -23,7 +23,8 @@ private:
     Ui::MainPage *ui;
     bool checkPlayerNames();
     MainPage *tc;
-    PlayPage pPage;
+    PlayPage *pPage;
+    QString str;
 };
 
 #endif // MAINPAGE_H
