@@ -6,6 +6,18 @@ PlayPage::PlayPage(QWidget *parent) :
     ui(new Ui::PlayPage)
 {
     ui->setupUi(this);
+
+
+    //setting up the background
+    QPixmap bkgnd(":images/clouds.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
+
+
+
 }
 
 PlayPage::~PlayPage()

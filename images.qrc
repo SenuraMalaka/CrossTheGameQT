@@ -6,5 +6,8 @@
         <file>images/btns/cross/leave_btn.png</file>
         <file>images/btns/cross/tomato_btn.png</file>
         <file>images/btns/cross/btn_empty.png</file>
+        <file>images/btns/cross/tomato.png</file>
+        <file>images/btns/cross/leave.png</file>
+        <file>images/btns/arrowRed.png</file>
     </qresource>
 </RCC>
