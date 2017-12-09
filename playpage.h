@@ -49,9 +49,12 @@ private:
     Ui::PlayPage *ui;
     QString player1Name;
     QString player2Name;
+    QString btnPath;
     bool isPlayer1Chance;
     void togglePlayerChance();
     EventHandlePlayPage *eventHandlePP;
+    QPushButton *selectedBtn;
+
 };
 
 #endif // PLAYPAGE_H

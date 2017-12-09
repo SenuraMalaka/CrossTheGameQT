@@ -40,6 +40,17 @@ private:
     bool isBox3X3CheckedP2;
 
 
+    bool isBox1X1AvailableToClick;
+    bool isBox1X2AvailableToClick;
+    bool isBox1X3AvailableToClick;
+    bool isBox2X1AvailableToClick;
+    bool isBox2X2AvailableToClick;
+    bool isBox2X3AvailableToClick;
+    bool isBox3X1AvailableToClick;
+    bool isBox3X2AvailableToClick;
+    bool isBox3X3AvailableToClick;
+
+
 };
 
 #endif // EVENTHANDLEPLAYPAGE_H
