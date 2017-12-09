@@ -12,8 +12,10 @@ PlayPage::PlayPage(QWidget *parent) :
     isPlayer1Chance=true;
     ui->labelArrowRed_P2->setVisible(!isPlayer1Chance);
 
+    eventHandlePP=new EventHandlePlayPage();
 
     QObject::connect(this, SIGNAL(playerChanceChanged(bool)),this, SLOT(toggleRedArrow(bool)));
+    QObject::connect(this, SIGNAL(boxClicked(qint8, bool)),eventHandlePP, SLOT(checkTheBox(qint8, bool)));
 
 
 
@@ -45,6 +47,13 @@ void PlayPage::setPlayer2(QString p){
 }
 
 void PlayPage::togglePlayerChance(){
+
+    //check if they have won
+    if(isPlayer1Chance)
+    eventHandlePP->isPlayer1Won();
+    else eventHandlePP->isPlayer2Won();
+
+
     if(isPlayer1Chance)isPlayer1Chance=false;
     else isPlayer1Chance=true;
 
@@ -62,45 +71,66 @@ void PlayPage::toggleRedArrow(bool isPlayer1)
 //set the togglePlayerChance() to the Boxes
 void PlayPage::on_pushButton1X1_clicked()
 {
+
+    emit boxClicked(1, isPlayer1Chance);
+    if(eventHandlePP->returnBoxState(1)) qDebug()<<"Box 1 is clicked";  //test ///finished from here (4th Dec)
+
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton1X2_clicked()
 {
+    emit boxClicked(2, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton1X3_clicked()
 {
+    emit boxClicked(3, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton2X1_clicked()
 {
+    emit boxClicked(4, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton2X2_clicked()
 {
+    emit boxClicked(5, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton2X3_clicked()
 {
+    emit boxClicked(6, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton3X1_clicked()
 {
+    emit boxClicked(7, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton3X2_clicked()
 {
+    emit boxClicked(8, isPlayer1Chance);
     togglePlayerChance();
+
 }
 
 void PlayPage::on_pushButton3X3_clicked()
 {
+    emit boxClicked(9, isPlayer1Chance);
     togglePlayerChance();
+
 }

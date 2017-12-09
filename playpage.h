@@ -2,7 +2,8 @@
 #define PLAYPAGE_H
 
 #include <QWidget>
-
+#include <QPushButton>
+#include "eventhandleplaypage.h"
 namespace Ui {
 class PlayPage;
 }
@@ -22,6 +23,7 @@ public slots:
 
 signals:
     void playerChanceChanged(bool);
+    void boxClicked(qint8, bool);
 
 private slots:
     void on_pushButton1X1_clicked();
@@ -49,6 +51,7 @@ private:
     QString player2Name;
     bool isPlayer1Chance;
     void togglePlayerChance();
+    EventHandlePlayPage *eventHandlePP;
 };
 
 #endif // PLAYPAGE_H

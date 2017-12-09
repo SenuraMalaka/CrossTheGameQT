@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "playpage.h"
 
+
 namespace Ui {
 class MainPage;
 }

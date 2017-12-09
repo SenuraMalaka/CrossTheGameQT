@@ -14,11 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     mainpage.cpp \
-    playpage.cpp
+    playpage.cpp \
+    eventhandleplaypage.cpp
 
 HEADERS  += \
     mainpage.h \
-    playpage.h
+    playpage.h \
+    eventhandleplaypage.h
 
 FORMS    += \
     mainpage.ui \
