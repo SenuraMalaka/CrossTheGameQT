@@ -11,6 +11,7 @@ PlayPage::PlayPage(QWidget *parent) :
     //set the player 1 as the first player
     isPlayer1Chance=true;
     ui->labelArrowRed_P2->setVisible(!isPlayer1Chance);
+    ui->pushButtonNewGame->setVisible(false);
     btnPath=":images/btns/cross/tomato_btn.png"; //set the first click btn as Player1
 
     eventHandlePP=new EventHandlePlayPage();
@@ -96,6 +97,7 @@ void PlayPage::togglePlayerChance(){
     if(isPlayer1Won || isPlayer2Won)
     {
         didSomeoneWon=true;
+        ui->pushButtonNewGame->setVisible(true);
 
         if(isPlayer1Won){
             //p1 act goes here
@@ -125,8 +127,10 @@ void PlayPage::togglePlayerChance(){
     else btnPath=":images/btns/cross/leave_btn.png";
 
 
-    if(isAllBoxesFilled && !didSomeoneWon)
+    if(isAllBoxesFilled && !didSomeoneWon){
     ui->labelStatusInfo->setText("Draw");
+    ui->pushButtonNewGame->setVisible(true);
+    }
 
 
 }
@@ -265,5 +269,10 @@ void PlayPage::on_pushButton3X3_clicked()
         togglePlayerChance();
         }
     }
+
+}
+
+void PlayPage::on_pushButtonNewGame_clicked()
+{
 
 }

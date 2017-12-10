@@ -50,6 +50,8 @@ private slots:
     void on_pushButton3X3_clicked();
 
 
+    void on_pushButtonNewGame_clicked();
+
 private:
     Ui::PlayPage *ui;
     QString player1Name;
@@ -64,6 +66,7 @@ private:
     bool isTimerRunning;
     bool didSomeoneWon;
     bool isAllBoxesFilled;
+
 
 };
 

@@ -157,6 +157,9 @@
      <bold>false</bold>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
