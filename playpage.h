@@ -53,6 +53,8 @@ private slots:
 
     void on_pushButtonNewGame_clicked();
 
+    void on_pushButtonNewGameWSameP_clicked();
+
 private:
     Ui::PlayPage *ui;
     QString player1Name;

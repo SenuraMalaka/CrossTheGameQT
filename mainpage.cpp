@@ -9,6 +9,35 @@ MainPage::MainPage(QWidget *parent) :
     ui(new Ui::MainPage)
 {
     ui->setupUi(this);
+    initialiseStart();
+    qDebug()<<"1st cons called";
+
+}
+
+
+
+
+
+MainPage::MainPage(QString p1Name, QString p2Name, QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::MainPage)
+{
+    ui->setupUi(this);
+
+    initialiseStart();
+
+    ui->lineEditMainPagePlayer1->setText(p1Name);
+    ui->lineEditMainPagePlayer2->setText(p2Name);
+
+    qDebug()<<"2nd cons called";
+
+}
+
+
+
+
+void MainPage::initialiseStart(){
+
 
     pPage = new PlayPage();
 
@@ -49,6 +78,9 @@ MainPage::MainPage(QWidget *parent) :
 
 
 }
+
+
+
 
 MainPage::~MainPage()
 {

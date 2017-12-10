@@ -15,6 +15,7 @@ class MainPage : public QWidget
 
 public:
     explicit MainPage(QWidget *parent = 0);
+    explicit MainPage(QString p1Name, QString p2Name, QWidget *parent = 0);
     ~MainPage();
 
 private slots:
@@ -26,6 +27,7 @@ private:
     MainPage *tc;
     PlayPage *pPage;
     QString str;
+    void initialiseStart();
 };
 
 #endif // MAINPAGE_H
