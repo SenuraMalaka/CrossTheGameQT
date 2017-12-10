@@ -6,6 +6,7 @@
 #include <QElapsedTimer>
 #include <QTimer>
 #include "eventhandleplaypage.h"
+
 namespace Ui {
 class PlayPage;
 }
@@ -66,6 +67,8 @@ private:
     bool isTimerRunning;
     bool didSomeoneWon;
     bool isAllBoxesFilled;
+
+
 
 
 };

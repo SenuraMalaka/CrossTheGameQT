@@ -1,5 +1,6 @@
 #include "playpage.h"
 #include "ui_playpage.h"
+#include "mainpage.h"
 #include <QDebug>
 
 PlayPage::PlayPage(QWidget *parent) :
@@ -182,9 +183,9 @@ void PlayPage::on_pushButton1X2_clicked()
         }
     }
 
-    qint64 tm=myTimer.elapsed()/1000;   // finished from here 9th Dec
+//    qint64 tm=myTimer.elapsed()/1000;
 
-     qDebug()<<tm;
+//     qDebug()<<tm;
 
 }
 
@@ -275,4 +276,13 @@ void PlayPage::on_pushButton3X3_clicked()
 void PlayPage::on_pushButtonNewGame_clicked()
 {
 
+    MainPage *mainPg;
+    mainPg =new MainPage();
+    mainPg->show();
+    this->close();
+
+//    PlayPage *newPlayPg;
+//    newPlayPg =new PlayPage();
+//    newPlayPg->show();
+//    this->close();
 }
