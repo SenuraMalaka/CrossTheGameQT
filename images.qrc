@@ -9,5 +9,7 @@
         <file>images/btns/cross/tomato.png</file>
         <file>images/btns/cross/leave.png</file>
         <file>images/btns/arrowRed.png</file>
+        <file>images/btns/cross/tomato_winner.png</file>
+        <file>images/btns/cross/leave_winner.png</file>
     </qresource>
 </RCC>
