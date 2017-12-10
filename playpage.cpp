@@ -100,13 +100,18 @@ void PlayPage::togglePlayerChance(){
         didSomeoneWon=true;
         ui->pushButtonNewGameWSameP->setVisible(true);
 
+        QPixmap p;
         if(isPlayer1Won){
             //p1 act goes here
             ui->labelStatusInfo->setText(ui->labelPlayer1->text()+" Won");
+            p=QPixmap (":/images/btns/cross/tomato_winner.png");
+            ui->labelTomato->setPixmap(p);
         }
         else {
             //p2 act goes here
             ui->labelStatusInfo->setText(ui->labelPlayer2->text()+" Won");
+            p=QPixmap (":/images/btns/cross/leave_winner.png");
+            ui->labelLeave->setPixmap(p);
         }
 
     }
