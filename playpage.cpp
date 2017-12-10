@@ -9,6 +9,15 @@ PlayPage::PlayPage(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+    //To prevent resizing the window
+    #if defined(Q_OS_WIN)//only for windows
+    setWindowFlags(Qt::Widget | Qt::MSWindowsFixedSizeDialogHint);
+    #else//for all the other platforms
+    this->setMaximumSize(this->size());
+    #endif
+
+
     //set the player 1 as the first player
     isPlayer1Chance=true;
     ui->labelArrowRed_P2->setVisible(!isPlayer1Chance);

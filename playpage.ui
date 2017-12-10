@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Cross the Game - PlayWindow</string>
   </property>
   <widget class="QLabel" name="labelArrowRed_P1">
    <property name="geometry">
@@ -390,6 +390,12 @@
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
        <widget class="QLabel" name="labelStatus">
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <pointsize>18</pointsize>
@@ -416,7 +422,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -465,13 +471,12 @@
    </layout>
   </widget>
   <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
   <zorder>labelArrowRed_P1</zorder>
   <zorder>labelArrowRed_P2</zorder>
   <zorder>layoutWidget</zorder>
   <zorder>layoutWidget</zorder>
   <zorder>layoutWidget</zorder>
-  <zorder>pushButtonNewGame</zorder>
-  <zorder>pushButtonNewGameWSameP</zorder>
  </widget>
  <resources>
   <include location="images.qrc"/>
