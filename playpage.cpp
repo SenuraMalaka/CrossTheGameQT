@@ -28,6 +28,10 @@ PlayPage::PlayPage(QWidget *parent) :
     this->setPalette(palette);
 
 
+    isTimerRunning=false;
+    didSomeoneWon=false;
+    isAllBoxesFilled=false;
+
 }
 
 PlayPage::~PlayPage()
@@ -47,17 +51,59 @@ void PlayPage::setPlayer2(QString p){
 
 }
 
+
+
+
+void PlayPage::showTime(){
+
+
+    if(!didSomeoneWon && !isAllBoxesFilled) {
+    qDebug()<<"Time refresh goes now";
+
+    qint32 tm=myTimer.elapsed()/1000;
+
+    ui->lcdNumberTime->display((double)tm);
+    }
+
+}
+
+
+
 void PlayPage::togglePlayerChance(){
+
+
+
+    //start the timer if its not started yet
+    if(!isTimerRunning) {
+
+        myTimer.start();
+
+        timerQ =new QTimer(this);
+        QObject::connect(timerQ, SIGNAL(timeout()),this, SLOT(showTime()));
+        timerQ->start(1000);
+
+        isTimerRunning=true;
+    }
 
     //set the button pic
     QPixmap pixmap(btnPath);
     QIcon ButtonIcon(pixmap);
     selectedBtn->setIcon(ButtonIcon);
 
+
+
     //check if they have won
+    bool isPlayer1Won=false;
+    bool isPlayer2Won=false;
     if(isPlayer1Chance)
-    eventHandlePP->isPlayer1Won();
-    else eventHandlePP->isPlayer2Won();
+    isPlayer1Won=eventHandlePP->isPlayer1Won();
+    else isPlayer2Won=eventHandlePP->isPlayer2Won();
+
+    if(isPlayer1Won || isPlayer2Won)
+    {
+        didSomeoneWon=true;
+    }
+
 
 
     if(isPlayer1Chance)isPlayer1Chance=false;
@@ -69,6 +115,13 @@ void PlayPage::togglePlayerChance(){
     //change the button pic dir
     if(isPlayer1Chance) btnPath=":images/btns/cross/tomato_btn.png";
     else btnPath=":images/btns/cross/leave_btn.png";
+
+
+    isAllBoxesFilled = eventHandlePP->isAllBoxesFilled();
+
+    if(isAllBoxesFilled)
+    qDebug()<<"isAllBoxes are filled";
+
 
 }
 
@@ -83,90 +136,122 @@ void PlayPage::toggleRedArrow(bool isPlayer1)
 void PlayPage::on_pushButton1X1_clicked()
 {
 
-    if(eventHandlePP->returnBoxState(1)){
-    emit boxClicked(1, isPlayer1Chance);
-    selectedBtn= ui->pushButton1X1;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(1)){
+        emit boxClicked(1, isPlayer1Chance);
+        selectedBtn= ui->pushButton1X1;
+        togglePlayerChance();
+        }
     }
-
 
 }
 
+
+
+//void PlayPage::setSomeoneWonValue(bool state){
+//    didSomeoneWon=state; //change val
+//}
+
+
+
 void PlayPage::on_pushButton1X2_clicked()
 {
-    if(eventHandlePP->returnBoxState(2)){
-    emit boxClicked(2, isPlayer1Chance);
-    selectedBtn= ui->pushButton1X2;
-    togglePlayerChance();
+
+
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(2)){
+        emit boxClicked(2, isPlayer1Chance);
+        selectedBtn= ui->pushButton1X2;
+        togglePlayerChance();
+        }
     }
+
+    qint64 tm=myTimer.elapsed()/1000;   // finished from here 9th Dec
+
+     qDebug()<<tm;
 
 }
 
 void PlayPage::on_pushButton1X3_clicked()
 {
-    if(eventHandlePP->returnBoxState(3)){
-    emit boxClicked(3, isPlayer1Chance);
-    selectedBtn= ui->pushButton1X3;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(3)){
+        emit boxClicked(3, isPlayer1Chance);
+        selectedBtn= ui->pushButton1X3;
+        togglePlayerChance();
+        }
     }
 
 }
 
 void PlayPage::on_pushButton2X1_clicked()
 {
-    if(eventHandlePP->returnBoxState(4)){
-    emit boxClicked(4, isPlayer1Chance);
-    selectedBtn= ui->pushButton2X1;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(4)){
+        emit boxClicked(4, isPlayer1Chance);
+        selectedBtn= ui->pushButton2X1;
+        togglePlayerChance();
+        }
     }
+
 }
 
 void PlayPage::on_pushButton2X2_clicked()
 {
-    if(eventHandlePP->returnBoxState(5)){
-    emit boxClicked(5, isPlayer1Chance);
-    selectedBtn= ui->pushButton2X2;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(5)){
+        emit boxClicked(5, isPlayer1Chance);
+        selectedBtn= ui->pushButton2X2;
+        togglePlayerChance();
+        }
     }
 
 }
 
 void PlayPage::on_pushButton2X3_clicked()
 {
-    if(eventHandlePP->returnBoxState(6)){
-    emit boxClicked(6, isPlayer1Chance);
-    selectedBtn= ui->pushButton2X3;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(6)){
+        emit boxClicked(6, isPlayer1Chance);
+        selectedBtn= ui->pushButton2X3;
+        togglePlayerChance();
+        }
     }
 
 }
 
 void PlayPage::on_pushButton3X1_clicked()
 {
-    if(eventHandlePP->returnBoxState(7)){
-    emit boxClicked(7, isPlayer1Chance);
-    selectedBtn= ui->pushButton3X1;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(7)){
+        emit boxClicked(7, isPlayer1Chance);
+        selectedBtn= ui->pushButton3X1;
+        togglePlayerChance();
+        }
     }
 
 }
 
 void PlayPage::on_pushButton3X2_clicked()
 {
-    if(eventHandlePP->returnBoxState(8)){
-    emit boxClicked(8, isPlayer1Chance);
-    selectedBtn= ui->pushButton3X2;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(8)){
+        emit boxClicked(8, isPlayer1Chance);
+        selectedBtn= ui->pushButton3X2;
+        togglePlayerChance();
+        }
     }
 
 }
 
 void PlayPage::on_pushButton3X3_clicked()
 {
-    if(eventHandlePP->returnBoxState(9)){
-    emit boxClicked(9, isPlayer1Chance);
-    selectedBtn= ui->pushButton3X3;
-    togglePlayerChance();
+    if(!didSomeoneWon){
+        if(eventHandlePP->returnBoxState(9)){
+        emit boxClicked(9, isPlayer1Chance);
+        selectedBtn= ui->pushButton3X3;
+        togglePlayerChance();
+        }
     }
 
 }

@@ -4,6 +4,10 @@
 EventHandlePlayPage::EventHandlePlayPage(QObject *parent) : QObject(parent)
 {
 
+
+
+
+
     //initialise player 2 values
     isBox1X1CheckedP1=false;
     isBox1X2CheckedP1=false;
@@ -39,6 +43,7 @@ EventHandlePlayPage::EventHandlePlayPage(QObject *parent) : QObject(parent)
     isBox3X3AvailableToClick=true;
 
 
+    boxClickCount=0;
 
 }
 
@@ -47,6 +52,7 @@ EventHandlePlayPage::EventHandlePlayPage(QObject *parent) : QObject(parent)
 void EventHandlePlayPage::checkTheBox(qint8 boxNum, bool isPlayer1)
 {
 
+    boxClickCount++; //box clicked
 
     switch(boxNum) {
         case 1  :
@@ -224,6 +230,33 @@ bool EventHandlePlayPage::isPlayer2Won()
     }
 
     else return false; //not won
+
+}
+
+
+
+bool EventHandlePlayPage::isAllBoxesFilled(){
+
+    bool retValue=false;
+//    bool funcRet=false;
+
+//    for(qint8 i=1;i<9;i++)
+//    {
+
+//        //qDebug()<<"Checking returnBoxState "+i;
+//        funcRet=returnBoxState(i);
+//        if(funcRet)
+//        //qDebug()<<"funcRet is true";
+
+//        if(funcRet && retValue) retValue=true;
+//        else retValue=false;
+//    }
+
+
+    if (boxClickCount > 8 )
+    retValue=true;
+
+    return retValue;
 
 }
 

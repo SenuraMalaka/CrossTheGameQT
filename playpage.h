@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include <QElapsedTimer>
+#include <QTimer>
 #include "eventhandleplaypage.h"
 namespace Ui {
 class PlayPage;
@@ -20,6 +22,8 @@ public:
 public slots:
     void setPlayer1(QString p);
     void setPlayer2(QString p);
+    void showTime();
+//    void setSomeoneWonValue(bool);
 
 signals:
     void playerChanceChanged(bool);
@@ -45,6 +49,7 @@ private slots:
 
     void on_pushButton3X3_clicked();
 
+
 private:
     Ui::PlayPage *ui;
     QString player1Name;
@@ -54,6 +59,11 @@ private:
     void togglePlayerChance();
     EventHandlePlayPage *eventHandlePP;
     QPushButton *selectedBtn;
+    QElapsedTimer myTimer;
+    QTimer *timerQ;
+    bool isTimerRunning;
+    bool didSomeoneWon;
+    bool isAllBoxesFilled;
 
 };
 

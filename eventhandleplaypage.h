@@ -12,8 +12,10 @@ public:
     bool returnBoxState(qint8);
     bool isPlayer1Won();
     bool isPlayer2Won();
+    bool isAllBoxesFilled();
 
 signals:
+
 
 public slots:
     void checkTheBox(qint8, bool);
@@ -49,6 +51,12 @@ private:
     bool isBox3X1AvailableToClick;
     bool isBox3X2AvailableToClick;
     bool isBox3X3AvailableToClick;
+
+    int boxClickCount;
+
+
+
+
 
 
 };
