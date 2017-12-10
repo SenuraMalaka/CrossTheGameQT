@@ -52,10 +52,7 @@ void PlayPage::setPlayer2(QString p){
 }
 
 
-
-
 void PlayPage::showTime(){
-
 
     if(!didSomeoneWon && !isAllBoxesFilled) {
     qDebug()<<"Time refresh goes now";
@@ -67,13 +64,9 @@ void PlayPage::showTime(){
 
 }
 
-
-
 void PlayPage::togglePlayerChance(){
 
-
-
-    //start the timer if its not started yet
+    //start the timer if it is not started yet
     if(!isTimerRunning) {
 
         myTimer.start();
@@ -84,6 +77,7 @@ void PlayPage::togglePlayerChance(){
 
         isTimerRunning=true;
     }
+
 
     //set the button pic
     QPixmap pixmap(btnPath);
@@ -102,12 +96,26 @@ void PlayPage::togglePlayerChance(){
     if(isPlayer1Won || isPlayer2Won)
     {
         didSomeoneWon=true;
+
+        if(isPlayer1Won){
+            //p1 act goes here
+            ui->labelStatusInfo->setText(ui->labelPlayer1->text()+" Won");
+        }
+        else {
+            //p2 act goes here
+            ui->labelStatusInfo->setText(ui->labelPlayer2->text()+" Won");
+        }
+
     }
 
 
 
     if(isPlayer1Chance)isPlayer1Chance=false;
     else isPlayer1Chance=true;
+
+
+
+    isAllBoxesFilled = eventHandlePP->isAllBoxesFilled();
 
     //emit the changed value
     emit playerChanceChanged(isPlayer1Chance);
@@ -117,10 +125,8 @@ void PlayPage::togglePlayerChance(){
     else btnPath=":images/btns/cross/leave_btn.png";
 
 
-    isAllBoxesFilled = eventHandlePP->isAllBoxesFilled();
-
-    if(isAllBoxesFilled)
-    qDebug()<<"isAllBoxes are filled";
+    if(isAllBoxesFilled && !didSomeoneWon)
+    ui->labelStatusInfo->setText("Draw");
 
 
 }
@@ -128,8 +134,14 @@ void PlayPage::togglePlayerChance(){
 
 void PlayPage::toggleRedArrow(bool isPlayer1)
 {
-    ui->labelArrowRed_P1->setVisible(isPlayer1);
-    ui->labelArrowRed_P2->setVisible(!isPlayer1);
+    if(!didSomeoneWon && !isAllBoxesFilled){
+        ui->labelArrowRed_P1->setVisible(isPlayer1);
+        ui->labelArrowRed_P2->setVisible(!isPlayer1);
+    }else{
+        ui->labelArrowRed_P1->setVisible(false);
+        ui->labelArrowRed_P2->setVisible(false);
+    }
+
 }
 
 //set the togglePlayerChance() to the Boxes

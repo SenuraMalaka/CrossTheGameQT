@@ -348,33 +348,85 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>480</y>
-     <width>351</width>
-     <height>91</height>
+     <x>10</x>
+     <y>500</y>
+     <width>781</width>
+     <height>61</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
     <item>
-     <widget class="QLabel" name="labelTime">
-      <property name="font">
-       <font>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Time Elapsed</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="labelTime">
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Time Elapsed</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcdNumberTime"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelTimeSec">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> Sec.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <widget class="QLCDNumber" name="lcdNumberTime"/>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="labelStatus">
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Status :</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelStatusInfo">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Pending...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
+  <zorder>labelArrowRed_P1</zorder>
+  <zorder>labelArrowRed_P2</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>lcdNumberTime</zorder>
+  <zorder>labelTime</zorder>
+  <zorder>labelTimeSec</zorder>
+  <zorder>labelTimeSec</zorder>
+  <zorder>labelStatus</zorder>
+  <zorder>labelStatusInfo</zorder>
  </widget>
  <resources>
   <include location="images.qrc"/>

@@ -54,11 +54,6 @@ private:
 
     int boxClickCount;
 
-
-
-
-
-
 };
 
 #endif // EVENTHANDLEPLAYPAGE_H
