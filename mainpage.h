@@ -15,6 +15,11 @@ class MainPage : public QWidget
 
 public:
     explicit MainPage(QWidget *parent = 0);
+
+    /*!
+     * Overloaded constructor.
+     * Used to pass the current player names to start a new game with the same players.
+     */
     explicit MainPage(QString p1Name, QString p2Name, QWidget *parent = 0);
     ~MainPage();
 

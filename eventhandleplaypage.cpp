@@ -238,20 +238,6 @@ bool EventHandlePlayPage::isPlayer2Won()
 bool EventHandlePlayPage::isAllBoxesFilled(){
 
     bool retValue=false;
-//    bool funcRet=false;
-
-//    for(qint8 i=1;i<9;i++)
-//    {
-
-//        //qDebug()<<"Checking returnBoxState "+i;
-//        funcRet=returnBoxState(i);
-//        if(funcRet)
-//        //qDebug()<<"funcRet is true";
-
-//        if(funcRet && retValue) retValue=true;
-//        else retValue=false;
-//    }
-
 
     if (boxClickCount > 8 )
     retValue=true;

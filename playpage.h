@@ -21,13 +21,31 @@ public:
 
 
 public slots:
+
+    /*!
+     * Sets the Player 1 Name in the Label at the left side
+     */
     void setPlayer1(QString p);
+
+    /*!
+     * Sets the Player 2 Name in the Label at the right side
+     */
     void setPlayer2(QString p);
+
+    /*!
+     * Shows The Time on the LCD Display
+     */
     void showTime();
-//    void setSomeoneWonValue(bool);
 
 signals:
+    /*!
+     * Emits when the other player has got the chance. If true, Player 1 has the chance.
+     */
     void playerChanceChanged(bool);
+
+    /*!
+     * Emits the Box number and the Player. If True, Player 1 has clicked the box.
+     */
     void boxClicked(qint8, bool);
 
 private slots:
