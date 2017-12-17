@@ -6,8 +6,8 @@
 
 MainPage::MainPage(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MainPage)
-{
+    ui(new Ui::MainPage){
+
     ui->setupUi(this);
     initialiseStart();
     qDebug()<<"1st cons called";
@@ -20,8 +20,8 @@ MainPage::MainPage(QWidget *parent) :
 
 MainPage::MainPage(QString p1Name, QString p2Name, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MainPage)
-{
+    ui(new Ui::MainPage){
+
     ui->setupUi(this);
 
     initialiseStart();
@@ -82,8 +82,8 @@ void MainPage::initialiseStart(){
 
 
 
-MainPage::~MainPage()
-{
+MainPage::~MainPage(){
+
     delete ui;
 }
 
@@ -105,8 +105,8 @@ bool MainPage::checkPlayerNames(){
     return ret;
 }
 
-void MainPage::on_pushButtonPlayNow_clicked()
-{
+void MainPage::on_pushButtonPlayNow_clicked(){
+
     bool py=false;
     py=checkPlayerNames();
     if(py){

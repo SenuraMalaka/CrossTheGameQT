@@ -1,11 +1,7 @@
 #include "eventhandleplaypage.h"
 #include <QDebug>
 
-EventHandlePlayPage::EventHandlePlayPage(QObject *parent) : QObject(parent)
-{
-
-
-
+EventHandlePlayPage::EventHandlePlayPage(QObject *parent) : QObject(parent){
 
 
     //initialise player 2 values
@@ -49,8 +45,7 @@ EventHandlePlayPage::EventHandlePlayPage(QObject *parent) : QObject(parent)
 
 
 
-void EventHandlePlayPage::checkTheBox(qint8 boxNum, bool isPlayer1)
-{
+void EventHandlePlayPage::checkTheBox(qint8 boxNum, bool isPlayer1){
 
     boxClickCount++; //box clicked
 
@@ -120,8 +115,7 @@ void EventHandlePlayPage::checkTheBox(qint8 boxNum, bool isPlayer1)
 }
 
 
-bool EventHandlePlayPage::returnBoxState(qint8 boxNum)
-{
+bool EventHandlePlayPage::returnBoxState(qint8 boxNum){
 
     if (boxNum == 1) return isBox1X1AvailableToClick;
     else if (boxNum == 2) return isBox1X2AvailableToClick;
@@ -137,8 +131,7 @@ bool EventHandlePlayPage::returnBoxState(qint8 boxNum)
 
 
 
-bool EventHandlePlayPage::isPlayer1Won()
-{
+bool EventHandlePlayPage::isPlayer1Won(){
 
 
     if(isBox1X1CheckedP1 && isBox1X2CheckedP1 && isBox1X3CheckedP1){
@@ -186,8 +179,7 @@ bool EventHandlePlayPage::isPlayer1Won()
 
 }
 
-bool EventHandlePlayPage::isPlayer2Won()
-{
+bool EventHandlePlayPage::isPlayer2Won(){
 
     if(isBox1X1CheckedP2 && isBox1X2CheckedP2 && isBox1X3CheckedP2){
         qDebug()<<"Player 2 Won - 1 2 3 boxes filled";

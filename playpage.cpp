@@ -5,8 +5,8 @@
 
 PlayPage::PlayPage(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::PlayPage)
-{
+    ui(new Ui::PlayPage){
+
     ui->setupUi(this);
 
 
@@ -45,8 +45,7 @@ PlayPage::PlayPage(QWidget *parent) :
 
 }
 
-PlayPage::~PlayPage()
-{
+PlayPage::~PlayPage(){
     delete ui;
 }
 
@@ -104,8 +103,8 @@ void PlayPage::togglePlayerChance(){
     isPlayer1Won=eventHandlePP->isPlayer1Won();
     else isPlayer2Won=eventHandlePP->isPlayer2Won();
 
-    if(isPlayer1Won || isPlayer2Won)
-    {
+    if(isPlayer1Won || isPlayer2Won){
+
         didSomeoneWon=true;
         ui->pushButtonNewGameWSameP->setVisible(true);
 
@@ -151,8 +150,8 @@ void PlayPage::togglePlayerChance(){
 }
 
 
-void PlayPage::toggleRedArrow(bool isPlayer1)
-{
+void PlayPage::toggleRedArrow(bool isPlayer1){
+
     if(!didSomeoneWon && !isAllBoxesFilled){
         ui->labelArrowRed_P1->setVisible(isPlayer1);
         ui->labelArrowRed_P2->setVisible(!isPlayer1);
@@ -164,8 +163,7 @@ void PlayPage::toggleRedArrow(bool isPlayer1)
 }
 
 //set the togglePlayerChance() to the Boxes
-void PlayPage::on_pushButton1X1_clicked()
-{
+void PlayPage::on_pushButton1X1_clicked(){
 
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(1)){
@@ -178,15 +176,7 @@ void PlayPage::on_pushButton1X1_clicked()
 }
 
 
-
-//void PlayPage::setSomeoneWonValue(bool state){
-//    didSomeoneWon=state; //change val
-//}
-
-
-
-void PlayPage::on_pushButton1X2_clicked()
-{
+void PlayPage::on_pushButton1X2_clicked(){
 
 
     if(!didSomeoneWon){
@@ -197,14 +187,10 @@ void PlayPage::on_pushButton1X2_clicked()
         }
     }
 
-//    qint64 tm=myTimer.elapsed()/1000;
-
-//     qDebug()<<tm;
-
 }
 
-void PlayPage::on_pushButton1X3_clicked()
-{
+void PlayPage::on_pushButton1X3_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(3)){
         emit boxClicked(3, isPlayer1Chance);
@@ -215,8 +201,8 @@ void PlayPage::on_pushButton1X3_clicked()
 
 }
 
-void PlayPage::on_pushButton2X1_clicked()
-{
+void PlayPage::on_pushButton2X1_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(4)){
         emit boxClicked(4, isPlayer1Chance);
@@ -227,8 +213,8 @@ void PlayPage::on_pushButton2X1_clicked()
 
 }
 
-void PlayPage::on_pushButton2X2_clicked()
-{
+void PlayPage::on_pushButton2X2_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(5)){
         emit boxClicked(5, isPlayer1Chance);
@@ -239,8 +225,8 @@ void PlayPage::on_pushButton2X2_clicked()
 
 }
 
-void PlayPage::on_pushButton2X3_clicked()
-{
+void PlayPage::on_pushButton2X3_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(6)){
         emit boxClicked(6, isPlayer1Chance);
@@ -251,8 +237,8 @@ void PlayPage::on_pushButton2X3_clicked()
 
 }
 
-void PlayPage::on_pushButton3X1_clicked()
-{
+void PlayPage::on_pushButton3X1_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(7)){
         emit boxClicked(7, isPlayer1Chance);
@@ -263,8 +249,8 @@ void PlayPage::on_pushButton3X1_clicked()
 
 }
 
-void PlayPage::on_pushButton3X2_clicked()
-{
+void PlayPage::on_pushButton3X2_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(8)){
         emit boxClicked(8, isPlayer1Chance);
@@ -275,8 +261,8 @@ void PlayPage::on_pushButton3X2_clicked()
 
 }
 
-void PlayPage::on_pushButton3X3_clicked()
-{
+void PlayPage::on_pushButton3X3_clicked(){
+
     if(!didSomeoneWon){
         if(eventHandlePP->returnBoxState(9)){
         emit boxClicked(9, isPlayer1Chance);
@@ -287,8 +273,7 @@ void PlayPage::on_pushButton3X3_clicked()
 
 }
 
-void PlayPage::on_pushButtonNewGame_clicked()
-{
+void PlayPage::on_pushButtonNewGame_clicked(){
 
         MainPage *mainPg;
         mainPg =new MainPage();
@@ -297,8 +282,8 @@ void PlayPage::on_pushButtonNewGame_clicked()
 
 }
 
-void PlayPage::on_pushButtonNewGameWSameP_clicked()
-{
+void PlayPage::on_pushButtonNewGameWSameP_clicked(){
+
         MainPage *mainPg;
         mainPg =new MainPage(ui->labelPlayer1->text(),ui->labelPlayer2->text());
         mainPg->show();
